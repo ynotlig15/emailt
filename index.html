@@ -4,19 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de E-mail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h2 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2575fc;
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #1a5bbd;
+        }
+    </style>
 </head>
 <body>
-    <h2>Receba um e-mail automático!</h2>
-    <form name="contact" method="POST" netlify>
-        <p>
-            <label>Nome <input type="text" name="name" required></label>
-        </p>
-        <p>
-            <label>E-mail <input type="email" name="email" required></label>
-        </p>
-        <p>
-            <button type="submit">Enviar</button>
-        </p>
-    </form>
+    <div class="container">
+        <h2>Inscreva-se para receber novidades!</h2>
+        <p>Digite seu nome e e-mail abaixo:</p>
+        <form name="contact" method="POST" netlify>
+            <input type="text" name="name" placeholder="Seu nome" required>
+            <input type="email" name="email" placeholder="Seu e-mail" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
 </body>
 </html>
