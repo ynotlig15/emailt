@@ -7,9 +7,16 @@
 </head>
 <body>
     <h2>Receba um e-mail automático!</h2>
-    <form name="emailForm" method="POST" data-netlify="true">
-        <input type="email" name="email" placeholder="Digite seu e-mail" required />
-        <button type="submit">Receber e-mail</button>
+    <form name="contact" method="POST" netlify>
+        <p>
+            <label>Nome <input type="text" name="name" required></label>
+        </p>
+        <p>
+            <label>E-mail <input type="email" name="email" required></label>
+        </p>
+        <p>
+            <button type="submit">Enviar</button>
+        </p>
     </form>
 </body>
 </html>
