@@ -66,17 +66,68 @@
         button:hover {
             background-color: #1a5bbd;
         }
+
+        /* Estilizando o popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .popup h2 {
+            color: #2575fc;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            background-color: #2575fc;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup button:hover {
+            background-color: #1a5bbd;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Inscreva-se para receber novidades!</h2>
         <p>Digite seu nome e e-mail abaixo:</p>
-        <form name="contact" method="POST" netlify>
+        <form name="contact" method="POST" netlify onsubmit="showPopup(event)">
             <input type="text" name="name" placeholder="Seu nome" required>
             <input type="email" name="email" placeholder="Seu e-mail" required>
             <button type="submit">Cadastrar</button>
         </form>
     </div>
+
+    <!-- Popup de sucesso -->
+    <div class="popup" id="popup">
+        <h2>Cadastro realizado com sucesso! 🎉</h2>
+        <p>Obrigado por se inscrever. Em breve, você receberá um e-mail com mais informações.</p>
+        <button onclick="closePopup()">Fechar</button>
+    </div>
+
+    <script>
+        function showPopup(event) {
+            event.preventDefault(); // Impede o envio direto para Netlify
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
